@@ -1,0 +1,24 @@
+import time
+import winsound
+import threading
+def play_beep:
+   while not stop_beep:
+       winsound.Beep(1000,500)
+       time.sleep(0.5)
+def timer(t):
+   global stop_beep
+   stop_beep=False
+   beep_thread=threading.Thread(target=play_beep)
+   beep_thread.start()
+   for i in range(t,0):
+        mins,secs=divmod(t,60)
+        tim='{:02d}:{:02d}'.format(mins,secs)
+        print(tim,end='\r')
+        time.sleep(1)
+        t-=1
+   stop_beep=True
+   beep_thread.join()
+   winsound.Beep(5000,2000)
+   print("Stop")
+t=int(input("Enter time in Seconds: "))
+time(t)

@@ -1,0 +1,34 @@
+time module:-
+Getting the current Time:-
+time.time() returns the number of seconds since the epoch (January 1, 1970, 00:00:00 UTC).
+ex:-
+  time.time()
+  O/P:-1720599284.9109807
+time.localtime() returns a struct_time object representing the local time.
+ex:-
+  time.localtime()
+  O/P:-
+  time.struct_time(tm_year=2024, tm_mon=7, tm_mday=10, tm_hour=13, tm_min=45, tm_sec=23, tm_wday=2, tm_yday=192, tm_isdst=0)
+time.gmtime() returns a struct_time object representing the UTC time.
+ex:-
+  time.gmtime()
+  O/P:-
+  time.struct_time(tm_year=2024, tm_mon=7, tm_mday=10, tm_hour=8, tm_min=16, tm_sec=19, tm_wday=2, tm_yday=192, tm_isdst=0)
+time.ctime() returns a string representing the local time
+ex:-
+  time.ctime()
+  O/P:-
+  'Wed Jul 10 13:46:59 2024'
+
+Formatting and Parsing Time:-
+
+time.strftime() formats a struct_time object as a string.
+time.strptime() parses a string into a struct_time object.
+time.asctime() converts a struct_time object to a string.
+
+Suspending Execution:-
+
+time.sleep() suspends the execution of the current thread for a given number of seconds.
+Measuring Performance
+time.perf_counter() returns a float representing the time in seconds since an arbitrary point in time (typically system boot).
+The time module provides a rich set of functions for working with dates and times in Python. It allows you to easily get the current time, format and parse time representations, suspend execution, and measure code performance.
